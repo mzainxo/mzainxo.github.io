@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta https-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,72 +8,413 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
-<body>        
+<body> 
+    <div id="loading-screen">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Welcome</p>
+      </div>       
         <nav>
-            <img src="images/logo.png" class="logo">
+            <img src="images/zainlogob.png" id="logo-image" class="logo">
             <ul id="sidemenu">
+                <li>
+                    <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark mode" aria-label="auto" aria-live="polite">
+                        <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                          <mask class="moon" id="moon-mask">
+                            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                            <circle cx="24" cy="10" r="6" fill="black" />
+                          </mask>
+                          <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                          <g class="sun-beams" stroke="currentColor">
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                          </g>
+                        </svg>
+                      </button>
+                </li>
                 <li><a href="#header">Home</a></li>   
                 <li><a href="#about">About</a></li>    
                 <li><a href="#portfolio">Portfolio</a></li>   
                 <li><a href="#contact">Contact</a></li>  
+                
                 <i class="fa-solid fa-xmark" onclick="closemenu()"></i> 
             </ul>  
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i> 
+            <i id="fa-solid fa-bars" class="fa-solid fa-bars" onclick="openmenu()"></i> 
         </nav>
     <div id="header">
         <div class="container">
                 <div class="fade-in">
                 <div class="header-text">
-                    <h4>Hello!</h4>
-                    <h1>I'm <span>Muhammad Zain</span>, a software engineering undergraduate student</h1>
+                        <h4 id="dynamic-header">Hello!</h4>
+                    <h1>I'm <span>Muhammad Zain</span>, a final-year software engineering undergraduate with a keen interest in cybersecurity and a passion for adopting technology to solve real-world problems.</h1>
                 </div>
             </div>  
         </div>
     </div>
     <div id="about">
-        <video autoplay muted loop id="bgvideo">
-            <source src="images/giraffevideo.mp4" type="video/mp4">
+        <video autoplay muted loop id="bgvideo" loading="eager">
+            <source type="video/mp4">
         </video>
-        
         <div class="container">
             <div class="row">
-                <div class="fade-in">
-                <h1 class ="sub-title">About Me</h1>
-                <p>I'm <span>Muhammad Zain</span>, an enthusiastic undergraduate software engineering student at Bahria University, Karachi. 
-                    I am seeking a challenging and enriching internship in software development, where I can apply my skills to contribute 
-                    to the success of the organization while further developing my professional skills and gaining valuable industry 
-                    experience. With a strong foundation in computer science and programming languages, I am 
-                    confident in my abilities and looking forward to contribute to any organization I work with.
+                <h1 class ="sub-title"><div class="abt">About Me</div></h1>
+                <p>I’m an enthusiastic Bahria University undergraduate pursuing a Software Engineering degree, having a strong foundation in programming
+                    languages, and hands-on experience in .NET development, algorithms, and machine learning. Seeking mostly for <span>software development, and cybersecurity </span> positions to apply and enhance skills while contributing to organizational success and gaining valuable industry experience.
                 </p>
-                </div>
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                     <p class="tab-links" onclick="opentab('edu')">Education</p>
                     <p class="tab-links" onclick="opentab('exp')">Experience</p>
-
+                    <p class="tab-links" onclick="opentab('cert')">Certifications</p>
                 </div>
                 <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Programming Languages</span><br>C#, Java, C, HTML, CSS, Javascript, Assembly</li>
-                        <li><span>Databases</span><br>SQL, MongoDB</li>
-                        <li><span>Cross platform development engine</span><br>Unity</li>
-                        <li><span>Version control & Code hosting platform</span><br>Git, GitHub</li>
-                        <li><span>Operating Systems</span><br>Windows, Linux</li>
-                        <li><span>Productivity Application</span><br>Microsoft Office, Canva</li>
-                        <li><span>Software Engineering Knowledge</span><br>Data Structures, Algorithms, Design Patterns, UML, SRS Documentation</li>
-                        <li><span>Languages</span><br>English, Urdu, Arabic</li>
+                    <!--  Container  -->
+                    <ul class="progress">
+                        <!--  Item  -->
+                        <li data-name="C#" data-percent="88%">
+                            <svg viewBox="-10 -10 220 220">
+                            <g fill="none" stroke-width="6" transform="translate(100,100)">
+                            <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                            <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                            <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                            <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                            <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                            <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                            </g>
+                            </svg>
+                            <svg viewBox="-10 -10 220 220">
+                            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="554"></path>
+                            </svg>
+                        </li>
+                        <!--  Item  -->
+                        <li data-name="SQL" data-percent="80%">
+                            <svg viewBox="-10 -10 220 220">
+                            <g fill="none" stroke-width="6" transform="translate(100,100)">
+                            <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                            <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                            <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                            <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                            <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                            <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                            </g>
+                            </svg>
+                            <svg viewBox="-10 -10 220 220">
+                            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="465"></path>
+                            </svg>
+                        </li>
+                        <!--  Item  -->
+                        <li data-name="Java" data-percent="77%">
+                            <svg viewBox="-10 -10 220 220">
+                            <g fill="none" stroke-width="6" transform="translate(100,100)">
+                            <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                            <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                            <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                            <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                            <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                            <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                            </g>
+                            </svg>
+                            <svg viewBox="-10 -10 220 220">
+                            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="485"></path>
+                            </svg>
+                        </li>
+                        <!--  Item  -->
+                        <li data-name="Javascript" data-percent="42%">
+                            <svg viewBox="-10 -10 220 220">
+                            <g fill="none" stroke-width="6" transform="translate(100,100)">
+                            <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                            <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                            <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                            <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                            <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                            <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                            </g>
+                            </svg>
+                            <svg viewBox="-10 -10 220 220">
+                            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="264"></path>
+                            </svg>
+                        </li>
+                        <!--  Item  -->
+                        <li data-name="MongoDB" data-percent="48%">
+                            <svg viewBox="-10 -10 220 220">
+                            <g fill="none" stroke-width="6" transform="translate(100,100)">
+                            <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                            <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                            <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                            <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                            <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                            <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                            </g>
+                            </svg>
+                            <svg viewBox="-10 -10 220 220">
+                            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="302"></path>
+                            </svg>
+                        </li>
+                        <li data-name="Python" data-percent="55%">
+                            <svg viewBox="-10 -10 220 220">
+                            <g fill="none" stroke-width="6" transform="translate(100,100)">
+                            <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                            <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                            <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                            <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                            <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                            <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                            </g>
+                            </svg>
+                            <svg viewBox="-10 -10 220 220">
+                            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="346"></path>
+                            </svg>
+                        </li>
+                       
+                        <li data-name="Linux" data-percent="35%">
+                            <svg viewBox="-10 -10 220 220">
+                            <g fill="none" stroke-width="6" transform="translate(100,100)">
+                            <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                            <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                            <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                            <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                            <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                            <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                            </g>
+                            </svg>
+                            <svg viewBox="-10 -10 220 220">
+                            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="220"></path>
+                            </svg>
+                        </li>
+                        <li data-name="C" data-percent="69%">
+                            <svg viewBox="-10 -10 220 220">
+                            <g fill="none" stroke-width="6" transform="translate(100,100)">
+                            <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                            <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                            <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                            <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                            <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                            <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                            </g>
+                            </svg>
+                            <svg viewBox="-10 -10 220 220">
+                            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="434"></path>
+                            </svg>
+                        </li>
+                        
+                        <li data-name="Networking" data-percent="75%">
+                            <svg viewBox="-10 -10 220 220">
+                            <g fill="none" stroke-width="6" transform="translate(100,100)">
+                            <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                            <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                            <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                            <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                            <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                            <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                            </g>
+                            </svg>
+                            <svg viewBox="-10 -10 220 220">
+                            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="472"></path>
+                            </svg>
+                        </li>
+                        <li data-name="Cryptography" data-percent="83%">
+                            <svg viewBox="-10 -10 220 220">
+                            <g fill="none" stroke-width="6" transform="translate(100,100)">
+                            <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                            <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                            <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                            <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                            <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                            <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                            </g>
+                            </svg>
+                            <svg viewBox="-10 -10 220 220">
+                            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="522"></path>
+                            </svg>
+                        </li>
+                        <li data-name="Incident Response" data-percent="50%">
+                            <svg viewBox="-10 -10 220 220">
+                            <g fill="none" stroke-width="6" transform="translate(100,100)">
+                            <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                            <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                            <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                            <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                            <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                            <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                            </g>
+                            </svg>
+                            <svg viewBox="-10 -10 220 220">
+                            <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="315"></path>
+                            </svg>
+                        </li>
                     </ul>
+                    <!--  Defining Angle Gradient Colors  -->
+                    <svg width="0" height="0">
+                    <defs>
+                    <linearGradient id="cl1" >
+                        <stop stop-color="#618099"/>
+                    </linearGradient>
+                    <linearGradient id="cl2">
+                        <stop stop-color="#8e6677"/>
+                    </linearGradient>
+                    <linearGradient id="cl3">
+                        <stop stop-color="#9b5e67"/>
+                    </linearGradient>
+                    <linearGradient id="cl4">
+                        <stop stop-color="#9c787a"/>
+                    </linearGradient>
+                    <linearGradient id="cl5">
+                        <stop stop-color="#817a94"/>
+                    </linearGradient>
+                    <linearGradient id="cl6">
+                        <stop stop-color="#498a98"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+                    <div class="cardskill">
+                        <h3 style="padding-bottom: 0.5rem;">My Toolkit</h3>
+                        <div class="op-sk">
+                            <span class="tag-sk">Visual Studio</span>
+                            <span class="tag-sk">VS Code</span>
+                            <span class="tag-sk">Postman</span>
+                            <span class="tag-sk">Microsoft Azure</span>
+                            <span class="tag-sk">Cisco Packet Tracer</span>
+                            <span class="tag-sk">Oracle VM VirtualBox</span>
+                            <span class="tag-sk">VMware</span>
+                            <span class="tag-sk">Wireshark</span>
+                            <span class="tag-sk">Tcpdump</span>
+                            <span class="tag-sk">NetBeans</span>
+                            <span class="tag-sk">Google Colaboratory</span>
+                            <span class="tag-sk">Canva</span>
+                            <span class="tag-sk">Jupyter Notebook</span>
+                            <span class="tag-sk">Android Studio</span>
+                            <span class="tag-sk">Unity Engine</span>
+                            <span class="tag-sk">KNIME</span>
+                            <span class="tag-sk">GitHub</span>
+                            <span class="tag-sk">Codepen</span>
+                            <span class="tag-sk">SQL Server</span>
+                            <span class="tag-sk">MongoDB Atlas</span>
+                            <span class="tag-sk">Arduino</span>
+                            <span class="tag-sk">Proteus</span>
+                            <span class="tag-sk">Microsoft Office</span>
+                            <span class="tag-sk">MARS (MIPS Simulator)</span>
+                        </div>
+                    </div>
+                    <div class="cardskill">
+                        <h3 style="padding-bottom: 0.5rem;">Frameworks & Libraries</h3>
+                        <div class="op-sk">
+                            <span class="tag-sk">.NET Framework</span>
+                            <span class="tag-sk">Entity Framework</span>
+                            <span class="tag-sk">LINQ</span>
+                            <span class="tag-sk">jQUery</span>
+                            <span class="tag-sk">AJAX</span>
+                            <span class="tag-sk">Bootstrap</span>
+                            <span class="tag-sk">NIST Cybersecurity Framework</span>
+                            <span class="tag-sk">Pandas</span>
+                            <span class="tag-sk">OpenCV</span>
+                            <span class="tag-sk">BeautifulSoup</span>
+                            <span class="tag-sk">Scikit-learn</span>
+                            <span class="tag-sk">TensorFlow</span>
+                            <span class="tag-sk">Keras</span>
+                            <span class="tag-sk">Seaborn</span>
+                            <span class="tag-sk">NumPy</span>
+                            <span class="tag-sk">Matplotlib</span>
+                            <span class="tag-sk">Razor</span>
+                            <span class="tag-sk">Select2</span>
+                            <span class="tag-sk">NTLK</span>
+                            <span class="tag-sk">D-tale</span>
+                            <span class="tag-sk">Material UI</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-contents" id="edu">
-                    <ul>
-                        <li><span>BAHRIA UNIVERSITY, KARACHI</span>&ensp;2021-2025<br>Bachelors, Software Engineering</li>
-                        <li><span>AGA KHAN HIGHER SECONDARY SCHOOL, KARACHI</span>&ensp;2019-2021<br>Intermediate, Pre-Engineering</li>
-                        <li><span>PAKISTAN INTERNATIONAL SCHOOL, JEDDAH</span>&ensp;2016-2019<br>Matriculation, Science Group</li>
+                    <ul class="education-list">
+                        <li class="education-item">
+                            <div class="education-details">
+                                <h4 class="institution">Bahria University</h4>
+                                <p class="degree">Bachelors, Software Engineering</p>
+                            </div>
+                            <div class="education-year">2021 - 2025</div>
+                        </li>
+                        <li class="education-item">
+                            <div class="education-details">
+                                <h4 class="institution">Aga Khan Higher Secondary School, Karachi</h4>
+                                <p class="degree">Intermediate, Pre-Engineering</p>
+                            </div>
+                            <div class="education-year">2019 - 2021</div>
+                        </li>
+                        <li class="education-item">
+                            <div class="education-details">
+                                <h4 class="institution">Pakistan International School, Jeddah</h4>
+                                <p class="degree">Matriculation, Science Group</p>
+                            </div>
+                            <div class="education-year">2016 - 2019</div>
+                        </li>
+                        <li class="education-item">
+                            <div class="education-details">
+                                <h4 class="institution">Al-Shoa'a Interational School, Jeddah</h4>
+                                <p class="degree">Primary, Science Group</p>
+                            </div>
+                            <div class="education-year">2008 - 2016</div>
+                        </li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="exp">
-                        <h3>No Experiences yet :(</h3>
+                    <ul>
+                        <li class="experience-item" style="display: block">
+                            <div class="experience-details">
+                                <h4 class="job-position">.NET Intern</h4>
+                                <p class="company">NexinIT</p>
+                                <div class="job-dur">Nov 2023 - Dec 2023</div>
+                                <p class="description">During my two-month internship at NexinIT, I gained practical experience in back-end development using .NET Core and MVC architecture while working on a Customer Invoicing Application. I utilized Entity Framework for data management and SQL Server to ensure data integrity and performance. Additionally, I crafted responsive user interfaces with Razor UI, jQuery, AJAX, Bootstrap, HTML, CSS, and JavaScript, enhancing the application's interactivity and overall user experience. This opportunity allowed me to apply my skills in a collaborative environment and contribute to a meaningful project.</p>
+                            </div>
+                            <div class="op-sk" style="padding-bottom: 0;">
+                                <span class="tag-sk">Visual Studio</span>
+                                <span class="tag-sk">ASP.NET MVC Core 3.1</span>
+                                <span class="tag-sk">Postman</span>
+                                <span class="tag-sk">Microsoft Azure</span>
+                                <span class="tag-sk">GitHub</span>
+                                <span class="tag-sk">SQL Server</span>
+                                <span class="tag-sk">Entity Framework</span>
+                                <span class="tag-sk">jQuery</span>
+                                <span class="tag-sk">AJAX</span>
+                                <span class="tag-sk">Bootstrap</span>
+                                <span class="tag-sk">Razor</span>
+                                <span class="tag-sk">Select2</span>
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="cert">
+                    <div class="cardskill" style="margin-top: 1.5rem;">
+                        <h3 class="blog-title">Google Cybersecurity Professional Certificate</h3>
+                        <span class="blog-time" style="color:var(--text-color)">Aug 2023 - Feb 2024</span>
+                        <div class="description">
+                            The Google Cybersecurity Professional Certificate is an online program designed to equip learners with essential skills for entry-level roles in cybersecurity. Developed by Google experts, this comprehensive course covers critical topics such as risk management, network security, and incident response, utilizing hands-on learning with industry-standard tools like Python and Linux. No prior experience is required, making it accessible to anyone interested in the field. Graduates will be prepared for various roles, including Cybersecurity Analyst and SOC Analyst, and will have the opportunity to take the CompTIA Security+ exam, enhancing their career prospects in a rapidly growing job market.
+                        </div>
+                        <div class="options">
+                            <span class="tag-sk">NIST Cybersecurity Framework</span> <!-- Rounded tag instead of "Read Full Blog" -->
+                            <span class="tag-sk">SQL</span>
+                            <span class="tag-sk">Python</span>
+                            <span class="tag-sk">Linux</span>
+                            <span class="tag-sk">Wireshark</span>
+                            <span class="tag-sk">Tcpdump</span>
+                            <span class="tag-sk">Oracle VM VirtualBox</span>
+                            <span class="tag-sk">Incident Response</span>
+                            <span class="tag-sk">Assets, Threats, and Vulnerabilities</span>
+                            <span class="tag-sk">Intrusion Detection Systems (IDS)</span>
+                            <span class="tag-sk">SIEM tools</span>
+                        </div>
+                        <div class="cardbtn">
+                            
+                            <a href="https://www.coursera.org/account/accomplishments/specialization/XYFED8SFSTU5" target="_blank" ><button class="btn6"><span class="button_top"><i class="fa-solid fa-arrow-up-right-from-square"></i></span> </button></a>
+                        </div>
+                    </div>
                 </div>
                 </div>    
         </div>
@@ -81,49 +422,223 @@
 
     <div id="portfolio">
         <div class="container">
-            <h1 class ="sub-title">My <span>Portfolio</span></h1>
+            <h1 class="sub-title">My<span> Portfolio</span></h1>
             <p><br></p>
         </div>
         <div class="work-list">
-           
-            <div class="work">
-                <img src = "images/car.jpeg">
-                <div class="layer">
-                    <h3>Vehicle Trading System</h3>
-                    <p>Built on Windows Forms, C#, Microsoft SQL Server</p>
-                    <a href="https://github.com/mzainxo/VehicleTradingSystem" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="color: yellow;"></i></a>
+            
+            <div class="card">
+                <div class="card-img-holder">
+                    <img src="images/dontblink.png" id="img1"alt="Blog image" loading="eager">
+                </div>
+                <h3 class="blog-title">Don't Blink Game</h3>
+                <span class="blog-time">May 2024 - Jun 2024</span>
+                <p class="description">
+                    The Don’t Blink Game is an intelligent android-based game using computer vision. The game logic is integrated into the app, where the player with the longest time keeping their eyes open is deemed the winner!
+                </p>
+                <div class="options">
+                    <span class="tag">Android Studio</span> <!-- Rounded tag instead of "Read Full Blog" -->
+                    <span class="tag">XML</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">Material UI 3</span>
+                    <span class="tag">Google Vision</span>
+                    <span class="tag">Firebase Realtime Database</span>
+                    <span class="tag">Mobile App Dev.</span>
+                    <span class="tag">Data Mining</span>
+                    <span class="tag">Cloud</span>
+                </div>
+                <div class="cardbtn">
+                    <a href="https://github.com/mzainxo/Dont-Blink-Game-Android" target="_blank" ><button class="btn6"><span class="button_top"><i class="fa-brands fa-github"></i></span></button></a>
                 </div>
             </div>
-            <div class="work">
-                <img src = "images/pc.jpg">
-                <div class="layer">
-                    <h3>Labyrinth Maze Game</h3>
-                    <p>Based on A* alogrithm, built on Windows Forms, C#</p>
-                       <a href="https://github.com/mzainxo/MazeRush" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="color: yellow;"></i></a>
+            <div class="card">
+                <div class="card-img-holder">
+                    <img src="images/dds.png" id="img2"alt="Blog image" loading="eager">
+                </div>
+                <h3 class="blog-title">Drowsiness Detection System</h3>
+                <span class="blog-time">Dec 2023 - Jan 2024</span>
+                <p class="description">
+                    The DDS is an intelligent safety application designed to reduce road accidents caused by driver fatigue. Using computer vision, the system is trained to recognize facial features, specifically focusing on the eyes.
+                </p>
+                <div class="options">
+                    <span class="tag">Python</span> <!-- Rounded tag instead of "Read Full Blog" -->
+                    <span class="tag">CNN</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">Keras</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">Pygame</span>
+                    <span class="tag">Jupyter Notebook</span>
+                    <span class="tag">Data Science</span>
+                    <span class="tag">Eye-tracking</span>
+                </div>
+                <div class="cardbtn">
+                    <a href="https://github.com/mzainxo/Driver-Drowsiness-Detection-System" target="_blank" ><button class="btn6"><span class="button_top"><i class="fa-brands fa-github"></i></span></button></a>
                 </div>
             </div>
-            <div class="work">
-                <img src = "images/game.jpg">
-                <div class="layer">
-                    <h3>Color Mania</h3>
-                    <p>Candy Crush inspired game built on Unity, C#</p>
-                    <a href="https://github.com/mzainxo/ColorMania" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="color: yellow;"></i></a>
+            <div class="card">
+                <div class="card-img-holder">
+                    <img src="images/AirportNetworkImage.jpg" id="img3"alt="Blog image" loading="eager">
+                </div>
+                <h3 class="blog-title">Enterprise Network Design for Airports</h3>
+                <span class="blog-time">Dec 2023 - Jan 2024</span>
+                <p class="description">
+                    This network design for Dubai Int'l Airport creates a secure, scalable infrastructure using VLANs & access controls to enhance departmental communication & provide guest internet access while isolating internal systems.
+                </p>
+                <div class="options">
+                    <span class="tag">Cisco Packet Tracer</span> <!-- Rounded tag instead of "Read Full Blog" -->
+                    <span class="tag">EIGRP</span>
+                    <span class="tag">DHCP Server</span>
+                    <span class="tag">VLANs</span>
+                    <span class="tag">Access Points</span>
+                    <span class="tag">Computer Networks</span>
+                </div>
+                <div class="cardbtn">
+                    <a href="https://github.com/mzainxo/Network-Design-for-Airport" target="_blank" ><button class="btn6"><span class="button_top"><i class="fa-brands fa-github"></i></span></button></a>
                 </div>
             </div>
-            <div class="work">
-                <img src = "images/mbapp.jpg">
-                <div class="layer">
-                    <h3>Karachi Tour Guide</h3>
-                    <p>Built on thunkable (low-code/no-code platform)</p>
-                    
+            <div class="card">
+                <div class="card-img-holder">
+                    <img src="images/pmatrix.png" id="img4" alt="Blog image" loading="eager">
+                </div>
+                <h3 class="blog-title">Parallel Matrix Operations Application</h3>
+                <span class="blog-time">Jun 2023 - Jun 2023</span>
+                <p class="description">
+                    This Bash Application utilizes multithreading and OpenMP to enhance matrix computations, overcoming the inefficiencies of sequential operations. This project aims to provide faster and more efficient processing for large matrices.
+                </p>
+                <div class="options">
+                    <span class="tag">C</span> <!-- Rounded tag instead of "Read Full Blog" -->
+                    <span class="tag">OpenMP</span>
+                    <span class="tag">Bash</span>
+                    <span class="tag">Threads</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">Oracle VM VirtualBox</span>
+                    <span class="tag">Operating Systems</span>
+                </div>
+                <div class="cardbtn">
+                    <a href="https://github.com/mzainxo/Parallel-Matrix-Operations" target="_blank" ><button class="btn6"><span class="button_top"><i class="fa-brands fa-github"></i></span></button></a>
                 </div>
             </div>
-            <div class="work">
-                <img src = "images/game.jpg">
-                <div class="layer">
-                    <h3>CUBRO</h3>
-                    <p>Subway Surfers inspired game built on Unity, C#</p>
-                    <a href="https://github.com/mzainxo/CUBRO---Beginner-Subway-Surfers" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="color: yellow;"></i></a>
+            <div class="card">
+                <div class="card-img-holder">
+                    <img src="images/vts.jpg" id="img5"alt="Blog image" loading="eager">
+                </div>
+                <h3 class="blog-title">Vehicle Trading System</h3>
+                <span class="blog-time">Apr 2023 - Jun 2023</span>
+                <p class="description">
+                    A state-of-the-art vehicle management system designed to streamline operations and optimize data management. This project focuses on creating a robust database infrastructure for managing critical information, including vehicle details, maintenance logs, repair costs, and profit/loss analysis.
+                </p>
+                <div class="options">
+                    <span class="tag">C#</span> <!-- Rounded tag instead of "Read Full Blog" -->
+                    <span class="tag">Windows Forms</span>
+                    <span class="tag">SQL Server</span>
+                    <span class="tag">DBMS</span>
+                    <span class="tag">.NET Framework</span>
+                    <span class="tag">Design Patterns</span>
+                </div>
+                <div class="cardbtn">
+                    <a href="https://github.com/mzainxo/VehicleTradingSystem" target="_blank" ><button class="btn6"><span class="button_top"><i class="fa-brands fa-github"></i></span></button></a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img-holder">
+                    <img src="images/mr.jpg" id="img6" alt="Blog image" loading="eager">
+                </div>
+                <h3 class="blog-title">Maze Rush Game</h3>
+                <span class="blog-time">Jan 2023 - Feb 2023</span>
+                <p class="description">
+                    Maze Rush is a labyrinth maze game where players race against the clock to navigate through mazes filled with obstacles. Using quick thinking & problem-solving skills, players compete for high scores & unlock achievements in this thrilling maze adventure featuring multiple levels of increasing difficulty.
+                </p>
+                <div class="options">
+                    <span class="tag">C#</span> <!-- Rounded tag instead of "Read Full Blog" -->
+                    <span class="tag">Filing</span>
+                    <span class="tag">Windows Forms</span>
+                    <span class="tag">A* algorithm</span>
+                    <span class="tag">Data Structures & Algorithms</span>
+                </div>
+                <div class="cardbtn">
+                    <a href="https://github.com/mzainxo/MazeRush" target="_blank" ><button class="btn6"><span class="button_top"><i class="fa-brands fa-github"></i></span></button></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-holder">
+                    <img src="images/sb.png" id="img7" alt="Blog image" loading="eager">
+                </div>
+                <h3 class="blog-title">Space Battle Game</h3>
+                <span class="blog-time">Dec 2022 - Jan 2023</span>
+                <p class="description">
+                    SPACE BATTLE is a single-player strategy game developed in assembly language, inspired by classic arcade games. Players navigate through obstacles, improve their logical thinking, and enhance reaction times while aiming for high scores. The game features engaging visuals, player and enemy mechanics, and is compatible with all Windows devices.
+                </p>
+                <div class="options">
+                    <span class="tag">MARS</span> <!-- Rounded tag instead of "Read Full Blog" -->
+                    <span class="tag">MIPS Assembly</span>
+                    <span class="tag">Game</span>
+                    <span class="tag">Computer Architecture</span>
+                    <span class="tag">Logic Design</span>
+                </div>
+                <div class="cardbtn">
+                    <a href="https://github.com/mzainxo/SpaceBattle" target="_blank" ><button class="btn6"><span class="button_top"><i class="fa-brands fa-github"></i></span></button></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-holder">
+                    <img src="images/cm.png" id="img8" alt="Blog image" loading="eager">
+                </div>
+                <h3 class="blog-title">Color Mania Game</h3>
+                <span class="blog-time">Jun 2022 - Jul 2022</span>
+                <p class="description">
+                    COLOR MANIA is a single-player strategy game inspired by classic puzzle games like Candy Crush developed on Unity Engine, while focusing on logical thinking and planning. Players match colorful dots to clear the board, enhancing their reaction time while enjoying engaging visuals and multiple game modes that are Timer mode & Moves mode.
+                </p>
+                <div class="options">
+                    <span class="tag">C#</span> <!-- Rounded tag instead of "Read Full Blog" -->
+                    <span class="tag">Unity</span>
+                    <span class="tag">Candy Crush</span>
+                    <span class="tag">Object Oriented Programming</span>
+                    <span class="tag">Game Dev.</span>
+                </div>
+                <div class="cardbtn">
+                    <a href="https://github.com/mzainxo/ColorMania" target="_blank" ><button class="btn6"><span class="button_top"><i class="fa-brands fa-github"></i></span></button></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-holder">
+                    <img src="images/cub.png" id="img9" alt="Blog image" loading="eager">
+                </div>
+                <h3 class="blog-title">CUBRO Game</h3>
+                <span class="blog-time">Jan 2022 - Feb 2022</span>
+                <p class="description">
+                    CUBRO is a single-player strategy game inspired by Subway Surfers, where players navigate through obstacles to achieve the highest score without collisions. This game emphasizes logical thinking and reaction time, providing an engaging experience for players.
+                </p>
+                <div class="options">
+                    <span class="tag">C#</span> <!-- Rounded tag instead of "Read Full Blog" -->
+                    <span class="tag">Unity</span>
+                    <span class="tag">Game Dev.</span>
+                    <span class="tag">Computer Programming</span>
+                    <span class="tag">Subway Surfers</span>
+                </div>
+                <div class="cardbtn">
+                    <a href="https://github.com/mzainxo/CUBRO-Beginner-Subway-Surfers" target="_blank" ><button class="btn6"><span class="button_top"><i class="fa-brands fa-github"></i></span></button></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-holder">
+                    <img src="images/ktg.jpg" id="img10" alt="Blog image" loading="eager">
+                </div>
+                <h3 class="blog-title">Karachi Tour Guide</h3>
+                <span class="blog-time">Jan 2022 - Jan 2022</span>
+                <p class="description">
+                   Karachi Tour Guide is a Mobile Application developed using no-code/drag-and-drop platform 'Thunkable', and is compatible with both Android and iOS devices. It provides all the information about landmarks to explore in Karachi.
+                </p>
+                <div class="options">
+                    <span class="tag">Drag-and-Drop</span> <!-- Rounded tag instead of "Read Full Blog" -->
+                    <span class="tag">No-code</span>
+                    <span class="tag">Thunkable</span>
+                    <span class="tag">Mobile Application</span>
+                    <span class="tag">iOS/Android</span>
+                </div>
+                <div class="cardbtn">
+                   
                 </div>
             </div>
         </div>
@@ -138,28 +653,26 @@
                     <p><i class="fa-solid fa-phone"></i> +92-331-3471072</p>
                     <div class="social-icons">
                         <a href="https://www.linkedin.com/in/muhammadzain-se/" target="_blank"><i class="fa-brands fa-linkedin" ></i></a>
-                        <a href="https://www.instagram.com/za1n.xo/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://twitter.com/fancyenglishboy" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                         <a href="https://github.com/mzainxo" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://twitter.com/fancyenglishboy" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                     </div>
-                    <a href="images/cv.pdf" download class="btn">Download CV</a>
+                    <a href="images/cv.pdf" download ><button class="btn"><span class="button_top">Download CV</span></button></a>
                 </div>
                 <div class="contact-right">
-                    <form>
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="7" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn">Submit</button>
+                    <form id="contactForm" onsubmit="return sendEmail();">
+                        <input type="text" id="name" name="Name" placeholder="Your Name" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <textarea id="message" name="Message" rows="7" placeholder="Your Message"></textarea>
+                        <button type="submit"><span class="button_top">Submit</span></button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="copyright">
-            <p>Copyrights © Muhammad Zain</p>
+            <p>Copyrights © 2024 Muhammad Zain </p>
         </div>
     </div>
     
     <script src="script.js"></script>
-    <script src="script2.js"></script>
 </body>
 </html>
