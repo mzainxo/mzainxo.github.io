@@ -298,6 +298,7 @@ nav ul li .theme-toggle{
 }
 .active-tab{
     display: block;
+    padding: 0 3px;
 }
 #portfolio{
     padding: 41px 0;
@@ -307,7 +308,7 @@ nav ul li .theme-toggle{
 }
 .work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust for responsiveness */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjust for responsiveness */
     grid-gap: 30px;
     padding: 0 80px;
     padding-top: 0rem;
@@ -353,7 +354,7 @@ nav ul li .theme-toggle{
 .card-img-holder img {
     width: 100%;
     height: auto;
-    max-height: 12.5rem;
+    max-height: 17.5rem;
     object-fit: cover;
     border-radius: .6rem;
 }
@@ -918,6 +919,8 @@ sun-and-moon > .sun-beams {
     }
     .work-list{
         display:block;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minimum width of each work item */
+        padding: 0 23px;
     }
     .card{
         margin-bottom: 25px;
@@ -981,8 +984,9 @@ sun-and-moon > .sun-beams {
     }
   
     .work-list {
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Adjust the minimum width of each work item */
-      grid-gap: 20px; /* Reduce the gap between work items */
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); /* Adjust the minimum width of each work item */
+      grid-gap: 15px; /* Reduce the gap between work items */
+      padding: 0 30px;
     }
   
     .contact-left,
@@ -1028,8 +1032,9 @@ sun-and-moon > .sun-beams {
     }
   
     .work-list {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the minimum width of each work item */
-      grid-gap: 25px; /* Adjust the gap between work items */
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minimum width of each work item */
+      grid-gap: 20px; /* Adjust the gap between work items */
+      padding: 0 40px;
     }
   
     .contact-left,
