@@ -664,6 +664,25 @@ svg defs linearGradient stop{
     margin: 1.5rem 0;
 }
 
+/* Logo container */
+.education-logo {
+     /* 15% width for the logo */
+    text-align: left;
+}
+
+.education-logo img {
+    max-width: 43px;
+    height: auto;
+    padding-top: 3px;
+    border-radius: 5px; /* Optional: Rounded corners for the logo */
+}
+
+/* Details container */
+.education-details {
+    display: flex;
+    flex: 0 0 100%; /* 85% width for the details */
+}
+
 .experience-item {
     display: block;
     justify-content: space-between;
@@ -679,27 +698,30 @@ svg defs linearGradient stop{
     margin: 1.5rem 0;
 }
 
-.education-details {
-    flex-grow: 1;
-}
+
 
 .institution {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.2rem;
     color: var(--accent-color);
+    position: absolute;
+    padding-left: 60px;
 }
 
 .degree {
     font-size: 1rem;
     font-weight: normal;
     color: var(--text-color);
+    padding-top: 8px;
+    position: absolute;
+    padding-left: 60px;
+    text-align: left;
 }
 
 .education-year {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: normal;
-    margin-top: 1rem;
     text-align: right;
     color: var(--text-color);
 }
@@ -944,8 +966,34 @@ sun-and-moon > .sun-beams {
     [data-theme="dark"] .sun-and-moon {
         fill: #000;
     }
-    
-    
+    .education-item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+    }
+
+    .education-logo {
+        flex: 0 0 auto; /* Reset width */
+        margin-bottom: 0px; /* Add spacing below the logo */
+    }
+
+    .education-details {
+        flex: 0 0 auto; /* Reset width */
+        flex-direction: column;
+        padding-left: 0; /* Remove left padding */
+        text-align: left; /* Center align text */
+    }
+
+    .degree {
+        font-size: 0.9rem; /* Slightly smaller font size for mobile */
+        position: relative;
+        padding: 0.2rem;
+        margin-top: -1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .institution{
+        position: relative;
+        padding-left: 0.2rem;
+    }
     
 }
 
