@@ -172,33 +172,33 @@ document.addEventListener('DOMContentLoaded', () => {
         function sendEmail() {
           // Get the values from the form
           var name = document.getElementById('name').value;
-          var email = document.getElementById('email').value;
+          //var email = document.getElementById('email').value;
           var message = document.getElementById('message').value;
-      
+
           // Construct the mailto link
-          var mailtoLink = 'mailto:mzainjed@gmail.com?subject=Contact%20Form%20Submission&body=' +
-                           'Name: ' + encodeURIComponent(name) + '%0D%0A' +
-                           'Email: ' + encodeURIComponent(email) + '%0D%0A' +
-                           'Message: ' + encodeURIComponent(message);
-      
+          var mailtoLink = 'mailto:mzainjed@gmail.com?subject=' +
+                          encodeURIComponent('Contact request from ' + name + ' via Portfolio') +
+                          '&body=' +
+                          encodeURIComponent(message);
+
           // Redirect to the mailto link
           window.location.href = mailtoLink;
-      
+
           // Prevent the form from submitting the traditional way
           return false;
       }
 
-// script.js
-document.addEventListener('DOMContentLoaded', () => {
-  const videoElement = document.getElementById('bgvideo');
+        // script.js
+  document.addEventListener('DOMContentLoaded', () => {
+    const videoElement = document.getElementById('bgvideo');
 
-  // Optional: Check if the video source is set correctly
-  videoElement.src = 'images/compvideo.mp4'; // Ensure the path is correct
+    // Optional: Check if the video source is set correctly
+    videoElement.src = 'images/compvideo.mp4'; // Ensure the path is correct
 
-  // Add an event listener for error handling
-  videoElement.onerror = function() {
-      console.error('Error loading video. Please check the file path.');
-  };
+    // Add an event listener for error handling
+    videoElement.onerror = function() {
+        console.error('Error loading video. Please check the file path.');
+    };
 
 
-});
+  });
