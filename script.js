@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
             "Hello!",      // English
             "!السلام علیکم",  // Urdu
             "!مرحباً",     // Arabic
-            "Hallo!",      // German
-            "你好！",     // Chinese
+            "Hallo!", // German
+            "你好！", // 中文 "Hello!"
             "Hola!",        // Spanish
             "Merhaba!"     // Turkish
         ];
