@@ -261,15 +261,27 @@ nav ul li .theme-toggle{
     flex-wrap: wrap;
 }
 .tab-titles{
-   display: ruby-text;
+   display: flex;
+   overflow-x: auto;
+   overflow-y: hidden;
+   white-space: nowrap;
    margin: 0px;
    margin-top: 25px;
+   padding: 10px 0;
+   -webkit-overflow-scrolling: touch;
+   scrollbar-width: none; /* Firefox */
+   -ms-overflow-style: none; /* Internet Explorer 10+ */
    
 }
+
+.tab-titles::-webkit-scrollbar {
+    display: none; /* WebKit */
+}
 .tab-links{
-    padding: 0.4rem 0.5rem;
-    margin-right: 0.5rem;
-    font-size: 18px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    margin-bottom: 0;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     position: relative;
@@ -280,6 +292,9 @@ nav ul li .theme-toggle{
     transition: all 0.3s ease;
     display: inline-block;
     text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 120px;
 }
 
 .tab-links::after{
@@ -543,6 +558,9 @@ button{
     transform: translateY(-0.15em);
     transition: transform 0.1s ease;
 }
+.cvbtn{
+    margin-right: 0.25rem;
+}
 .btn6:hover .button_top {
     transform: translateY(-0.23em);
 }
@@ -561,7 +579,7 @@ form input{
     border-bottom-width: 6px;
     background: var(--bg-color);
     padding: 15px;
-    margin: 15px 0;
+    margin: 11px 0;
     color: var(--text-color);
     font-size: 18px;
     border-radius: .6rem;
@@ -581,7 +599,7 @@ form textarea{
     border-bottom-width: 6px;
     background: var(--bg-color);
     padding: 15px;
-    margin: 15px 0;
+    margin: 11px 0;
     color: var(--text-color);
     font-size: 18px;
     border-radius: .6rem;
@@ -959,13 +977,16 @@ sun-and-moon > .sun-beams {
         display: none; /* WebKit */
     }
     .tab-links{
-        margin-right: 10px;
-        margin-bottom: 0;
-        font-size: 14px;
-        padding: 8px 16px;
+        margin-right: 10px !important;
+        margin-bottom: 0 !important;
+        font-size: 16px !important;
+        padding: 10px 20px !important;
         white-space: nowrap;
         display: inline-block;
         flex-shrink: 0;
+        min-width: 120px;
+        width: auto;
+        text-align: center;
     }
     .work-list{
         display:block;
@@ -1064,6 +1085,32 @@ sun-and-moon > .sun-beams {
       grid-gap: 15px; /* Reduce the gap between work items */
       padding: 0 30px;
     }
+    
+    .tab-titles{
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding: 10px 0;
+        margin-top: 20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+    .tab-titles::-webkit-scrollbar {
+        display: none; /* WebKit */
+    }
+    .tab-links{
+        margin-right: 10px !important;
+        margin-bottom: 0 !important;
+        font-size: 16px !important;
+        padding: 10px 20px !important;
+        white-space: nowrap;
+        display: inline-block;
+        flex-shrink: 0;
+        min-width: 120px;
+        width: auto;
+        text-align: center;
+    }
   
     .contact-left,
     .contact-right {
@@ -1111,6 +1158,32 @@ sun-and-moon > .sun-beams {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minimum width of each work item */
       grid-gap: 20px; /* Adjust the gap between work items */
       padding: 0 40px;
+    }
+    
+    .tab-titles{
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding: 10px 0;
+        margin-top: 20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+    .tab-titles::-webkit-scrollbar {
+        display: none; /* WebKit */
+    }
+    .tab-links{
+        margin-right: 10px !important;
+        margin-bottom: 0 !important;
+        font-size: 16px !important;
+        padding: 10px 20px !important;
+        white-space: nowrap;
+        display: inline-block;
+        flex-shrink: 0;
+        min-width: 120px;
+        width: auto;
+        text-align: center;
     }
   
     .contact-left,
