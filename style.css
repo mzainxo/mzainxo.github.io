@@ -945,9 +945,27 @@ sun-and-moon > .sun-beams {
         left: 25px;
         cursor: pointer;
     }
+    .tab-titles{
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding: 10px 0;
+        margin-top: 20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+    .tab-titles::-webkit-scrollbar {
+        display: none; /* WebKit */
+    }
     .tab-links{
-        margin-right: 13px;
-        font-size: 16px;
+        margin-right: 10px;
+        margin-bottom: 0;
+        font-size: 14px;
+        padding: 8px 16px;
+        white-space: nowrap;
+        display: inline-block;
+        flex-shrink: 0;
     }
     .work-list{
         display:block;
