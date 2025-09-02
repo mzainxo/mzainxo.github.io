@@ -1,3 +1,12 @@
+/* Education Grade Styling */
+.education-grade {
+    font-size: 1rem;
+    text-align: right;
+    color: var(--accent-color);
+    margin: 0.2em 0 0.2em 0;
+    letter-spacing: 0.5px;
+    display: block;
+}
 @import "https://unpkg.com/open-props/easings.min.css";
 /* Dark Theme Styles */
 [data-theme="dark"] {
