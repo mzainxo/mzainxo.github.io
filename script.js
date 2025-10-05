@@ -2,12 +2,41 @@ const loadingTimeout = setTimeout(function() {
   const loadingScreen = document.getElementById('loading-screen');
   loadingScreen.style.display = 'none';
 }, 5000); // Hide the loading screen after 5 seconds (adjust as needed)
+
 window.addEventListener('load', function() {
   const loadingScreen = document.getElementById('loading-screen');
   loadingScreen.style.display = 'none';
-});
-window.addEventListener('load', function() {
   clearTimeout(loadingTimeout);
+  
+  // Initialize EmailJS
+  (function() {
+    emailjs.init("GveI5r1D-1MYMuAQu"); // Replace with your EmailJS public key
+  })();
+
+  // Send visit notification
+  const sendVisitNotification = () => {
+    const templateParams = {
+      to_email: 'mzainjed@gmail.com',
+      site_name: 'Portfolio Website',
+      visit_time: new Date().toLocaleString(),
+      visitor_info: JSON.stringify({
+        userAgent: navigator.userAgent,
+        language: navigator.language,
+        screenResolution: `${window.screen.width}x${window.screen.height}`
+      })
+    };
+
+    emailjs.send('service_my_portfolio', 'template_portfolio_visit', templateParams)
+      .then((response) => {
+        console.log('Visit notification sent!', response.status);
+      })
+      .catch((error) => {
+        console.error('Failed to send visit notification:', error);
+      });
+  };
+
+  // Send notification when page loads
+  sendVisitNotification();
 });
 
 // script.js
