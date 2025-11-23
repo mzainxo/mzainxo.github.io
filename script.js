@@ -15,12 +15,37 @@ window.addEventListener('load', function() {
 
   // Send visit notification
   const sendVisitNotification = () => {
+    const getUserAgentName = () => {
+      // Prefer Client Hints when available
+      if (navigator.userAgentData) {
+        if (Array.isArray(navigator.userAgentData.brands) && navigator.userAgentData.brands.length) {
+          return navigator.userAgentData.brands.map(b => b.brand).join(' ');
+        }
+        if (Array.isArray(navigator.userAgentData.uaList) && navigator.userAgentData.uaList.length) {
+          return navigator.userAgentData.uaList.map(b => b.brand).join(' ');
+        }
+      }
+
+      // Fallback to parsing navigator.userAgent
+      const ua = navigator.userAgent || '';
+      if (/edg/i.test(ua)) return 'Edge';
+      if (/opr|opera/i.test(ua)) return 'Opera';
+      if (/chrome/i.test(ua) && !/edg/i.test(ua) && !/opr|opera/i.test(ua)) return 'Chrome';
+      if (/safari/i.test(ua) && !/chrome/i.test(ua)) return 'Safari';
+      if (/firefox/i.test(ua)) return 'Firefox';
+      if (/msie|trident/i.test(ua)) return 'Internet Explorer';
+      return ua || 'Unknown';
+    };
+
     const templateParams = {
       to_email: 'mzainjed@gmail.com',
       site_name: 'Portfolio Website',
       visit_time: new Date().toLocaleString(),
+      user_agent: navigator.userAgent,
+      user_agent_name: getUserAgentName(),
       visitor_info: JSON.stringify({
         userAgent: navigator.userAgent,
+        userAgentName: getUserAgentName(),
         language: navigator.language,
         screenResolution: `${window.screen.width}x${window.screen.height}`
       })
