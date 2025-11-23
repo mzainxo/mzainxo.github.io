@@ -357,7 +357,7 @@ nav ul li .theme-toggle{
     display: none; /* WebKit */
 }
 .tab-links{
-    padding: 10px 20px;
+    padding: 10px 10px;
     margin-right: 10px;
     margin-bottom: 0;
     font-size: 16px;
@@ -476,7 +476,7 @@ nav ul li .theme-toggle{
 }
 
 .blog-time {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: var(--text-color);
     font-weight: 400;
 
@@ -783,10 +783,31 @@ svg defs linearGradient stop{
     border-radius: 5px; /* Optional: Rounded corners for the logo */
 }
 
+
 /* Details container */
 .education-details {
     display: flex;
     flex: 0 0 100%; /* 85% width for the details */
+}
+
+/* Experience details: place logo on the left and text on the right */
+.experience-details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1 1 auto;
+}
+
+.experience-logo {
+    text-align: left; /* reserve space for the logo */
+    text-align: start;
+}
+
+.experience-logo img {
+    margin-top: 0.1rem;
+    height: auto;
+    padding-top: 2px;
+    border-radius: 5px;
 }
 
 .experience-item {
@@ -804,7 +825,18 @@ svg defs linearGradient stop{
     margin: 1.5rem 0;
 }
 
+/* Logo container */
+.experience-logo {
+     /* 15% width for the logo */
+    text-align: left;
+}
 
+/* Content to the right of logo should stack vertically */
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+}
 
 .institution {
     font-size: 1.2rem;
@@ -835,7 +867,7 @@ svg defs linearGradient stop{
 .job-position {
     font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
     color: var(--accent-color);
 }
 
@@ -1059,7 +1091,7 @@ sun-and-moon > .sun-beams {
         margin-right: 10px !important;
         margin-bottom: 0 !important;
         font-size: 16px !important;
-        padding: 10px 20px !important;
+        padding: 10px 10px !important;
         white-space: nowrap;
         display: inline-block;
         flex-shrink: 0;
@@ -1109,6 +1141,19 @@ sun-and-moon > .sun-beams {
         flex-direction: column;
         padding-left: 0; /* Remove left padding */
         text-align: left; /* Center align text */
+    }
+
+    .experience-logo {
+        flex: 0 0 auto; /* keep logo above details on small screens */
+        margin-bottom: 0px;
+    }
+
+    .experience-details {
+        flex: 0 0 auto;
+        flex-direction: column;
+        padding-left: 0;
+        text-align: left;
+        gap: 0rem;
     }
 
     .degree {
