@@ -793,7 +793,7 @@ svg defs linearGradient stop{
 /* Experience details: place logo on the left and text on the right */
 .experience-details {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 1rem;
     flex: 1 1 auto;
 }
@@ -1129,6 +1129,12 @@ sun-and-moon > .sun-beams {
     .education-item {
         flex-direction: column; /* Stack items vertically */
         align-items: flex-start;
+    }
+
+    .experience-item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+
     }
 
     .education-logo {
