@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
   
   // Initialize EmailJS
   (function() {
-    emailjs.init("GveI5r1D-1MYMuAQu"); // Replace with your EmailJS public key
+    //emailjs.init("GveI5r1D-1MYMuAQu"); // Replace with your EmailJS public key
   })();
 
   // Send visit notification
