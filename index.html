@@ -2,15 +2,16 @@
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta https-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Muhammad Zain: Software Engineering graduate and Cybersecurity Analyst. VAPT, digital forensics, GRC and AI-driven threat detection.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Zain's Portfolio</title>
+    <title>Muhammad Zain | Cybersecurity Analyst &amp; Software Engineer</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <!-- PNG Icons -->
@@ -27,64 +28,43 @@
     <!-- Web App Manifest -->
     <link rel="manifest" href="images/site.webmanifest">
 
+    <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme-preference')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));document.documentElement.setAttribute('data-language',localStorage.getItem('language-preference')||'en')}catch(e){document.documentElement.setAttribute('data-language','en')}</script>
 </head>
 <body> 
-    <div id="loading-screen">
-        <div class="loading-spinner"></div>
-        <p class="loading-text">Welcome</p>
-      </div>       
-        <nav>
-            <img src="images/zainlogob.png" id="logo-image" class="logo">
-            <ul id="sidemenu">
-                <li>
-                    <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark mode" aria-label="auto" aria-live="polite">
-                        <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-                          <mask class="moon" id="moon-mask">
-                            <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                            <circle cx="24" cy="10" r="6" fill="black" />
-                          </mask>
-                          <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
-                          <g class="sun-beams" stroke="currentColor">
-                            <line x1="12" y1="1" x2="12" y2="3" />
-                            <line x1="12" y1="21" x2="12" y2="23" />
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                            <line x1="1" y1="12" x2="3" y2="12" />
-                            <line x1="21" y1="12" x2="23" y2="12" />
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                          </g>
-                        </svg>
-                      </button>
-                </li>
-                <li><a href="#header">Home</a></li>   
-                <li><a href="#about">About</a></li>    
-                <li><a href="#portfolio">Portfolio</a></li>   
-                <li><a href="#contact">Contact</a></li>  
-                
-                <i class="fa-solid fa-xmark" onclick="closemenu()"></i> 
-            </ul>  
-            <i id="fa-solid fa-bars" class="fa-solid fa-bars" onclick="openmenu()"></i> 
-        </nav>
-    <div id="header">
-        <div class="container">
-                <div class="fade-in">
-                <div class="header-text">
-                        <h4 id="dynamic-header">Hello!</h4>
-                    <h1>
-                        I'm <span>Muhammad Zain</span>, a Software Engineering graduate and Cybersecurity Analyst. I focus on VAPT, digital forensics, GRC, and building AI-driven threat detection for cloud and enterprise environments.
-                    </h1>
-                </div>
-            </div>  
+    <div id="progress"></div>
+    <nav aria-label="Main">
+        <img src="images/zainlogob.png" id="logo-image" class="logo" alt="Zain">
+        <ul id="sidemenu">
+            <li class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><mask id="moon-mask"><rect width="100%" height="100%" fill="#fff"/><circle class="moon-cut" cx="30" cy="9" r="7" fill="#000"/></mask><circle cx="12" cy="12" r="6" fill="currentColor" mask="url(#moon-mask)"/><g class="sun-beams" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></g></svg>
+                </button>
+                <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch language to German">ENG</button>
+            </li>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark close" role="button" aria-label="Close menu"></i>
+        </ul>
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+    <header id="header">
+        <div class="container hero">
+            <p class="status"><i></i>MSc Computer Science @ TU Dresden</p>
+            <h4 id="dynamic-header">Hello!</h4>
+            <h1 class="header-name">I'm Muhammad Zain</h1>
+            <p class="lead">Software Engineering graduate and Cybersecurity Analyst. I focus on VAPT, digital forensics, GRC, and building AI-driven threat detection for cloud and enterprise environments.</p>
+            <div class="cta"><a class="pill" href="#portfolio">View projects</a><a class="pill ghost" href="#contact">Get in touch</a></div>
         </div>
-    </div>
+    </header>
     <div id="about">
-        <video autoplay muted loop id="bgvideo" loading="eager">
+        <video autoplay muted loop playsinline preload="none" id="bgvideo" aria-hidden="true">
             <source type="video/mp4">
         </video>
         <div class="container">
             <div class="row">
-                <h1 class ="sub-title"><div class="abt">About Me</div></h1>
+                <h2 class="sub-title">About Me</h2>
                 <p>
                     I am a Software Engineering graduate passionate about VAPT, Cybersecurity, and AI. I enjoy solving complex problems and developing innovative solutions across technology domains. My experience spans <span>Python, C, Bash, C#, Java, and SQL</span>, as well as Linux, cloud platforms, and security tools. I have worked on projects involving intrusion detection, secure networking, and incident response, and am dedicated to utilizing technology to drive positive impact in the tech sector.
                 </p>
@@ -150,131 +130,12 @@
                     </div>
                 <div class="tab-titles">
                         
-                    <p class="tab-links active-link" onclick="opentab('exp')">Experience</p>
-                    <p class="tab-links" onclick="opentab('edu')">Education</p>
-                    <p class="tab-links" onclick="opentab('cert')">Certifications</p>
+                    <p class="tab-links active-link" data-tab="exp">Experience</p>
+                    <p class="tab-links" data-tab="edu">Education</p>
+                    <p class="tab-links" data-tab="cert">Certifications</p>
                 </div>
-                <div class="tab-contents " id="skills">
-                    <!--div class="skills-container">
-                        <h3 class="skills-heading">Programming Languages & Technologies</h3>
-                        <div class="skill-bars">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">C#</span>
-                                    <span class="skill-percentage">53%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 53%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Python</span>
-                                    <span class="skill-percentage">79%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 79%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">SQL</span>
-                                    <span class="skill-percentage">60%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 60%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Java</span>
-                                    <span class="skill-percentage">70%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 70%"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">C</span>
-                                    <span class="skill-percentage">60%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 60%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">JavaScript</span>
-                                    <span class="skill-percentage">40%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 40%"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="skills-heading">Domain Expertise</h3>
-                         
-                        <div class="skill-bars">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Linux</span>
-                                    <span class="skill-percentage">55%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 55%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Cryptography</span>
-                                    <span class="skill-percentage">83%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 83%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Machine Learning</span>
-                                    <span class="skill-percentage">75%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Computer Vision</span>
-                                    <span class="skill-percentage">68%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 68%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Data Processing</span>
-                                    <span class="skill-percentage">72%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 72%"></div>
-                                </div>
-                            </div>
-                           
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Digital Forensics and GRC</span>
-                                    <span class="skill-percentage">70%</span>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 50%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div-->
+                <div class="tab-contents" id="skills">
+                    
                     
                 </div>
                 <div class="tab-contents " id="edu">
@@ -294,7 +155,7 @@
                         <li class="education-item">
                             <div class="education-details">
                                 <div class="education-logo">
-                                    <img src="images/akhss-logo.png" alt="Bahria University Logo">
+                                    <img src="images/akhss-logo.png" alt="Aga Khan Higher Secondary School Logo">
                                 </div>
                                 <h4 class="institution">Aga Khan Higher Secondary School, Karachi</h4>
                                 <p class="degree"><br>Intermediate, Pre-Engineering</p>
@@ -305,7 +166,7 @@
                         <li class="education-item">
                             <div class="education-details">
                                 <div class="education-logo">
-                                    <img src="images/pisj-logo.png" alt="Bahria University Logo">
+                                    <img src="images/pisj-logo.png" alt="Pakistan International School, Jeddah Logo">
                                 </div>
                                 <h4 class="institution">Pakistan International School, Jeddah</h4>
                                 <p class="degree"><br>Matriculation, Science Group</p>
@@ -316,9 +177,9 @@
                         <li class="education-item">
                             <div class="education-details">
                                 <div class="education-logo">
-                                    <img src="images/alshoaa-logo.png" alt="Bahria University Logo">
+                                    <img src="images/alshoaa-logo.png" alt="Al-Shoa'a International School Logo">
                                 </div>
-                                <h4 class="institution">Al-Shoa'a Interational School, Jeddah</h4>
+                                <h4 class="institution">Al-Shoa'a International School, Jeddah</h4>
                                 <p class="degree"><br>Primary, Science Group</p>
                             </div>
                             <div class="education-year">Apr 2008 - July 2016</div>
@@ -335,7 +196,7 @@
                                 <div class="experience-content">
                                     <h4 class="job-position">Cyber Security Analyst</h4>
                                     <p class="company">Meezan Bank Limited</p>
-                                    <div class="job-dur">October 2025 - Present</div>
+                                    <div class="job-dur">October 2025 - September 2026</div>
                                 </div>
                             </div>
                             <div class="op-sk" style="margin-top: 1rem; padding-bottom: 0;">
@@ -390,7 +251,7 @@
                                 <div class="experience-content">
                                     <h4 class="job-position">.NET Intern</h4>
                                     <p class="company">NexinIT</p>
-                                    <div class="job-dur">Nov 2023 - Dec 2023</div>
+                                    <div class="job-dur">November 2023 - December 2023</div>
                                    
                                 </div>
                             </div>
@@ -555,13 +416,13 @@
 
     <div id="portfolio">
         <div class="container">
-            <h1 class="sub-title">My<span> Portfolio</span></h1>
-            <p><br></p>
+            <h2 class="sub-title">Portfolio</h2>
+            
         </div>
         <div class="work-list">
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/icads.jpg" id="img1"alt="Blog image" loading="eager">
+                    <img src="images/icads.jpg" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">Intelligent Cyber Attacks Detection System (ICADS)</h3>
                 <span class="blog-time">Oct 2024 - Jun 2025 | Final Year Project</span>
@@ -586,7 +447,7 @@
             </div>
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/phishing.png" id="img1"alt="Blog image" loading="eager">
+                    <img src="images/phishing.png" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">Phishing Emails Detection System</h3>
                 <span class="blog-time">Nov 2024 - Dec 2024</span>
@@ -612,7 +473,7 @@
 
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/dontblink.png" id="img1"alt="Blog image" loading="eager">
+                    <img src="images/dontblink.png" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">Don't Blink Game</h3>
                 <span class="blog-time">May 2024 - Jun 2024</span>
@@ -637,7 +498,7 @@
             </div>
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/dds.png" id="img2"alt="Blog image" loading="eager">
+                    <img src="images/dds.png" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">Drowsiness Detection System</h3>
                 <span class="blog-time">Dec 2023 - Jan 2024</span>
@@ -663,7 +524,7 @@
             </div>
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/AirportNetworkImage.jpg" id="img3"alt="Blog image" loading="eager">
+                    <img src="images/AirportNetworkImage.jpg" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">Enterprise Network Design for Airports</h3>
                 <span class="blog-time">Dec 2023 - Jan 2024</span>
@@ -684,7 +545,7 @@
             </div>
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/pmatrix.png" id="img4" alt="Blog image" loading="eager">
+                    <img src="images/pmatrix.png" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">Parallel Matrix Operations Application</h3>
                 <span class="blog-time">Jun 2023 - Jun 2023</span>
@@ -706,7 +567,7 @@
             </div>
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/vts.jpg" id="img5"alt="Blog image" loading="eager">
+                    <img src="images/vts.jpg" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">Vehicle Trading System</h3>
                 <span class="blog-time">Apr 2023 - Jun 2023</span>
@@ -728,7 +589,7 @@
             
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/mr.jpg" id="img6" alt="Blog image" loading="eager">
+                    <img src="images/mr.jpg" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">Maze Rush Game</h3>
                 <span class="blog-time">Jan 2023 - Feb 2023</span>
@@ -748,7 +609,7 @@
             </div>
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/sb.png" id="img7" alt="Blog image" loading="eager">
+                    <img src="images/sb.png" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">Space Battle Game</h3>
                 <span class="blog-time">Dec 2022 - Jan 2023</span>
@@ -768,7 +629,7 @@
             </div>
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/cm.png" id="img8" alt="Blog image" loading="eager">
+                    <img src="images/cm.png" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">Color Mania Game</h3>
                 <span class="blog-time">Jun 2022 - Jul 2022</span>
@@ -788,7 +649,7 @@
             </div>
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/cub.png" id="img9" alt="Blog image" loading="eager">
+                    <img src="images/cub.png" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">CUBRO Game</h3>
                 <span class="blog-time">Jan 2022 - Feb 2022</span>
@@ -808,7 +669,7 @@
             </div>
             <div class="card">
                 <div class="card-img-holder">
-                    <img src="images/ktg.jpg" id="img10" alt="Blog image" loading="eager">
+                    <img src="images/ktg.jpg" alt="" loading="lazy">
                 </div>
                 <h3 class="blog-title">Karachi Tour Guide</h3>
                 <span class="blog-time">Jan 2022 - Jan 2022</span>
@@ -833,12 +694,12 @@
         <div class="container">
             <div class="row1">
                 <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
+                    <h2 class="sub-title">Contact</h2>
                     <p><i class="fa-solid fa-envelope"></i> mzainjed@gmail.com</p>
                     <div class="social-icons">
                         <a href="https://www.linkedin.com/in/mzainxo" target="_blank"><i class="fa-brands fa-linkedin" ></i></a>
                         <a href="https://github.com/mzainxo" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://twitter.com/fancyenglishboy" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                        
                         <!-- Visit Counter and Email Notification -->
                         <div id="visit-counter">
                             <img src="https://hitwebcounter.com/counter/counter.php?page=19500675&style=0038&nbdigits=3&type=page&initCount=50" title="Counter Widget" border="0"/>
@@ -848,7 +709,7 @@
                     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
                 
                     <!--a href="images/p-cv-zain.pdf" download class="cvbtn"><button class="btn" ><span class="button_top">Professional CV</span></button></a-->
-                    <button class="btn" onclick="alert('Sorry for inconvenience, the CV is currently disabled by the owner.');"><span class="button_top">Academic CV</span></button>
+                    <button class="btn" id="cv-btn" type="button"><span class="button_top">Academic CV</span></button>
                     <!-- hitwebcounter Code START -->
                           
                 </div>
@@ -863,10 +724,11 @@
             </div>
         </div>
         <div class="copyright">  
-            <p>Copyrights © 2025 Muhammad Zain </p>
+            <p>© 2026 Muhammad Zain </p>
         </div>
     </div>
     
+    <script src="animations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,105 +1,21 @@
-/* Animation Keyframes */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),.55)}70%,100%{box-shadow:0 0 0 12px rgba(var(--accent-rgb),0)}}
+@keyframes blink{50%{opacity:0}}
+@keyframes tabIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+/* Hero: one orchestrated sequence (name resolves, then the rest follows) */
+html.js .status,html.js #dynamic-header,html.js .lead,html.js .cta{opacity:0}
+html.js.go .status{animation:heroIn .8s var(--ease) .05s forwards}
+html.js.go #dynamic-header{animation:heroIn .8s var(--ease) .25s forwards}
+html.js.go .lead{animation:heroIn .9s var(--ease) 1.5s forwards}
+html.js.go .cta{animation:heroIn .9s var(--ease) 1.7s forwards}
 
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+/* Scroll reveals: kept small, applied to groups only */
+html.js .rv{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
+html.js .rv.in{opacity:1;transform:none}
 
-@keyframes icon-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(180deg);
-    }
-}
-
-/* Tab Content Animations */
-.tab-contents {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.tab-contents.active-tab {
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-/* Portfolio Card Animations */
-.card {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards;
-    animation-delay: calc(var(--card-index, 0) * 0.1s);
-}
-
-/* Education List Animations */
-.education-item {
-    opacity: 0;
-    transform: translateX(-30px);
-    animation: slideInLeft 0.8s ease forwards;
-    animation-delay: calc(var(--item-index, 0) * 0.2s);
-}
-
-/* Certification Card Animations */
-#cert .cardskill {
-    opacity: 0;
-    transform: scale(0.95);
-    animation: scaleIn 0.8s ease forwards;
-    animation-delay: calc(var(--cert-index, 0) * 0.2s);
-}
-
-/* Experience Item Animations */
-.experience-item {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
-    animation-delay: calc(var(--exp-index, 0) * 0.2s);
-}
-
-/* Header Text Animation */
-.header-text {
-    animation: fadeInUp 1s ease forwards;
-}
-
-/* About Section Animation */
-#about {
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Portfolio Section Animation */
-#portfolio {
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Section Headings Animation */
-.sub-title {
-    opacity: 0;
-    animation: scaleIn 0.8s ease forwards;
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+  html.js .status,html.js #dynamic-header,html.js .lead,html.js .cta,html.js .rv{opacity:1;transform:none}
 }
