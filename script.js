@@ -245,7 +245,7 @@ function applyLanguage() {
   setLabel('#language-toggle', 'Switch language to German', 'Sprache auf Englisch umstellen');
   setLabel('#sidemenu .close', 'Close menu', 'Menü schließen');
   setLabel('.menu-btn', 'Open menu', 'Menü öffnen');
-  $('#language-toggle').textContent = isGerman ? 'DEU' : 'ENG';
+  $('#language-toggle').textContent = isGerman ? 'ENG' : 'DEU';
   $('#name').placeholder = isGerman ? 'Ihr Name' : 'Your Name';
   $('#message').placeholder = isGerman ? 'Ihre Nachricht' : 'Your Message';
   $('#name').name = isGerman ? 'Name' : 'Name';
@@ -266,7 +266,7 @@ function reflectTheme() {
     ? `Zum ${theme.value === 'dark' ? 'hellen' : 'dunklen'} Modus wechseln`
     : `Switch to ${theme.value === 'dark' ? 'light' : 'dark'} mode`);
   const logo = $('#logo-image');
-  if (logo) logo.src = theme.value === 'dark' ? 'images/zainlogob.png' : 'images/zainlogow.png';
+  if (logo) logo.src = theme.value === 'dark' ? 'images/zain_logo_black_background.png' : 'images/zain_logo_white_background.png';
 }
 reflectTheme();
 $('#theme-toggle')?.addEventListener('click', () => {

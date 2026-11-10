@@ -33,13 +33,18 @@
 <body> 
     <div id="progress"></div>
     <nav aria-label="Main">
-        <img src="images/zainlogob.png" id="logo-image" class="logo" alt="Zain">
+        <p id="logo"><span style="color: var(--accent-color)">@</span>mzainxo</p>
+        <!--img src="images/zain_logo_black_background.png" id="logo-image" class="logo" alt="Zain"-->
         <ul id="sidemenu">
             <li class="nav-controls">
                 <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><mask id="moon-mask"><rect width="100%" height="100%" fill="#fff"/><circle class="moon-cut" cx="30" cy="9" r="7" fill="#000"/></mask><circle cx="12" cy="12" r="6" fill="currentColor" mask="url(#moon-mask)"/><g class="sun-beams" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></g></svg>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <style>.theme-sun,.theme-moon{display:none}html[data-theme="dark"] .theme-sun,html[data-theme="light"] .theme-moon{display:inline}</style>
+                        <g class="theme-sun" fill="currentColor"><circle cx="12" cy="12" r="5"/><path d="M11 1h2v4h-2zm0 18h2v4h-2zM1 11h4v2H1zm18 0h4v2h-4zM4.22 5.64l1.42-1.42 2.83 2.83-1.42 1.42zm11.31 11.31 1.42-1.42 2.83 2.83-1.42 1.42zM4.22 18.36l2.83-2.83 1.42 1.42-2.83 2.83zm11.31-11.31 2.83-2.83 1.42 1.42-2.83 2.83z"/></g>
+                        <path class="theme-moon" d="M20.5 15.5A9 9 0 0 1 8.5 3.5 9 9 0 1 0 20.5 15.5Z" fill="currentColor"/>
+                    </svg>
                 </button>
-                <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch language to German">ENG</button>
+                <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch language to German">DEU</button>
             </li>
             <li><a href="#header">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -730,5 +735,6 @@
     
     <script src="animations.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
