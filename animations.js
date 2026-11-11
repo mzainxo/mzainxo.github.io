@@ -48,7 +48,7 @@
 
   // Greeting in the languages Zain speaks, typed one after another
   async function greetings(el) {
-    const list = ['Hello!', 'السلام علیکم!', 'مرحباً', 'Hallo!', '你好！', 'Hola!', 'Merhaba!'];
+    const list = ['Hello!','Hallo!', 'السلام علیکم!', 'مرحباً',  '你好！', 'Hej!', 'Merhaba!'];
     el.dir = 'auto';
     if (reduce) { el.textContent = list[0]; return; }
     for (let i = 0; ; i = (i + 1) % list.length) {
